@@ -1,11 +1,11 @@
-# J.A.R.V.I.S — docker-compose.yml
+# Nexus — docker-compose.yml
 # ================================
 # Easy local development and testing
 
 version: '3.8'
 
 services:
-  jarvis:
+  nexus:
     build: .
     ports:
       - "8765:8765"   # WebSocket server
@@ -14,13 +14,13 @@ services:
       - ./logs:/app/logs:rw
       - ./.env:/app/.env:ro
     environment:
-      - JARVIS_HOST=0.0.0.0
-      - JARVIS_PORT=8765
+      - Nexus_HOST=0.0.0.0
+      - Nexus_PORT=8765
       # Add your API keys here or use .env file
       # - OPENROUTER_API_KEY=your_key_here
       # - WOLFRAM_APP_ID=your_app_id_here
       # - OPENWEATHER_API_KEY=your_key_here
-      # - JARVIS_CITY=New York
+      # - Nexus_CITY=New York
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8865/health/live"]
@@ -39,4 +39,4 @@ services:
 #   ports:
 #     - "3000:3000"
 #   depends_on:
-#     - jarvis
+#     - nexus

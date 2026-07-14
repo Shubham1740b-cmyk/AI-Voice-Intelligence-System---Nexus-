@@ -5,7 +5,7 @@ INDEX_HTML = '''<!DOCTYPE html>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>J.A.R.V.I.S — Unified Intelligence Core</title>
+  <title>Nexus — Unified Intelligence Core</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -16,7 +16,7 @@ INDEX_HTML = '''<!DOCTYPE html>
   <div id="preloader" class="preloader">
     <div class="starfield"></div>
     <div class="nebula"></div>
-    <div class="loading-text">INITIALIZING J.A.R.V.I.S...</div>
+    <div class="loading-text">INITIALIZING Nexus...</div>
   </div>
 
   <!-- ═══════════════════════════════════ SCAN LINES OVERLAY ═══════════════════════════════════ -->
@@ -26,7 +26,7 @@ INDEX_HTML = '''<!DOCTYPE html>
   <!-- ═══════════════════════════════════ HEADER BAR ═══════════════════════════════════ -->
   <header class="hud-header">
     <div class="header-left">
-      <span class="logo-text">J.A.R.V.I.S V6.5</span>
+      <span class="logo-text">Nexus V6.5</span>
       <span class="logo-sub">UNIVERSAL CHARACTER AI & CHAT ACCELERATOR</span>
     </div>
     <div class="header-center">
@@ -49,7 +49,7 @@ INDEX_HTML = '''<!DOCTYPE html>
 
       <!-- Boot Sequence HUD -->
       <div class="panel-card boot-card" style="font-family: var(--font-display); background: rgba(0, 100, 200, 0.1); border: 1px solid rgba(0, 200, 255, 0.4); padding: 20px; text-transform: uppercase;">
-        <div style="font-size: 24px; color: var(--c-cyan); font-weight: 900; letter-spacing: 4px; margin-bottom: 5px;">J.A.R.V.I.S V6.5</div>
+        <div style="font-size: 24px; color: var(--c-cyan); font-weight: 900; letter-spacing: 4px; margin-bottom: 5px;">Nexus V6.5</div>
         <div style="font-size: 10px; color: var(--c-text-dim); letter-spacing: 2px; margin-bottom: 20px;">UNIVERSAL CHARACTER AI & CHAT ACCELERATOR</div>
         
         <div class="boot-sequence" style="font-family: var(--font-mono); font-size: 11px; color: var(--c-cyan); line-height: 1.8; letter-spacing: 1px;">
@@ -87,7 +87,7 @@ INDEX_HTML = '''<!DOCTYPE html>
 
       <!-- Text Input Fallback -->
       <div class="text-input-row">
-        <input type="text" id="textInput" class="jarvis-input" placeholder="Or type your command here..." autocomplete="off"/>
+        <input type="text" id="textInput" class="nexus-input" placeholder="Or type your command here..." autocomplete="off"/>
         <button class="send-btn" id="sendBtn">SEND</button>
       </div>
     </section>
@@ -103,10 +103,10 @@ INDEX_HTML = '''<!DOCTYPE html>
           <button class="clear-btn" id="clearChatBtn" title="Clear history">✕</button>
         </div>
         <div class="chat-history" id="chatHistory">
-          <div class="chat-msg jarvis">
+          <div class="chat-msg nexus">
             <div class="msg-avatar">J</div>
             <div class="msg-content">
-              <span class="msg-sender">JARVIS</span>
+              <span class="msg-sender">Nexus</span>
               <p>All systems initialized. Neural networks calibrated. How can I assist you today?</p>
               <span class="msg-time">BOOT</span>
             </div>
@@ -122,7 +122,7 @@ INDEX_HTML = '''<!DOCTYPE html>
           <span class="terminal-blink">●</span>
         </div>
         <div class="terminal-log" id="terminalLog">
-          <div class="t-line">[BOOT] J.A.R.V.I.S core initialized</div>
+          <div class="t-line">[BOOT] Nexus core initialized</div>
           <div class="t-line">[BOOT] Loading neural weight matrices...</div>
           <div class="t-line">[BOOT] Audio pipeline calibrated</div>
           <div class="t-line">[BOOT] Intent classifier ready</div>
@@ -145,7 +145,7 @@ INDEX_HTML = '''<!DOCTYPE html>
 '''
 
 STYLE_CSS = '''/* ═══════════════════════════════════════════════════════════════════
-   J.A.R.V.I.S — UNIFIED INTELLIGENCE CORE
+   Nexus — UNIFIED INTELLIGENCE CORE
    Cyberpunk / Deep Space HUD Stylesheet
    ═══════════════════════════════════════════════════════════════════ */
 
@@ -431,7 +431,7 @@ body {
 
 /* ── Text Input ── */
 .text-input-row { display:flex; gap:8px; width:100%; max-width:460px; }
-.jarvis-input {
+.nexus-input {
   flex:1; background:rgba(0,220,255,0.04);
   border: 1px solid var(--c-border);
   border-radius:3px; padding:10px 14px;
@@ -439,8 +439,8 @@ body {
   outline:none; transition: border-color .3s, box-shadow .3s;
   letter-spacing:1px;
 }
-.jarvis-input::placeholder { color:var(--c-text-dim); }
-.jarvis-input:focus {
+.nexus-input::placeholder { color:var(--c-text-dim); }
+.nexus-input:focus {
   border-color: var(--c-cyan);
   box-shadow: 0 0 15px rgba(0,220,255,0.15);
 }
@@ -482,12 +482,12 @@ body {
   font-family:var(--font-display); font-size:10px; font-weight:700;
   flex-shrink:0; margin-top:2px;
 }
-.chat-msg.jarvis .msg-avatar { background:rgba(0,220,255,0.12); color:var(--c-cyan); border:1px solid rgba(0,220,255,0.3); }
+.chat-msg.nexus .msg-avatar { background:rgba(0,220,255,0.12); color:var(--c-cyan); border:1px solid rgba(0,220,255,0.3); }
 .chat-msg.user  .msg-avatar { background:rgba(0,102,255,0.12); color:#6699ff; border:1px solid rgba(0,102,255,0.3); }
 
 .msg-content { flex:1; min-width:0; }
 .msg-sender { font-family:var(--font-display); font-size:8px; letter-spacing:2px; color:var(--c-text-dim); display:block; margin-bottom:4px; }
-.chat-msg.jarvis .msg-sender { color:var(--c-cyan); }
+.chat-msg.nexus .msg-sender { color:var(--c-cyan); }
 .chat-msg.user  .msg-sender { color:#6699ff; }
 .msg-content p {
   font-family:var(--font-body); font-size:12px; font-weight:300;
@@ -602,7 +602,7 @@ SPACE_CSS = '''/* ══════════ PRELOADER SPACE OPENING ══�
 }'''
 
 APP_JS = '''/**
- * J.A.R.V.I.S — Unified Intelligence Core
+ * Nexus — Unified Intelligence Core
  * Frontend Application — app.js
  *
  * Handles:
@@ -717,12 +717,12 @@ const conversationHistory = []; // multi-turn context for demo mode
 
 function addMessage(role, text) {
   const msg = document.createElement('div');
-  msg.className = 'chat-msg ' + (role === 'jarvis' ? 'jarvis' : 'user');
+  msg.className = 'chat-msg ' + (role === 'nexus' ? 'nexus' : 'user');
   const timeStr = new Date().toTimeString().slice(0,8);
   msg.innerHTML = `
-    <div class="msg-avatar">${role === 'jarvis' ? 'J' : 'U'}</div>
+    <div class="msg-avatar">${role === 'nexus' ? 'J' : 'U'}</div>
     <div class="msg-content">
-      <span class="msg-sender">${role === 'jarvis' ? 'JARVIS' : 'YOU'}</span>
+      <span class="msg-sender">${role === 'nexus' ? 'Nexus' : 'YOU'}</span>
       <p>${escapeHtml(text)}</p>
       <span class="msg-time">${timeStr}</span>
     </div>`;
@@ -1081,7 +1081,7 @@ function handleBackendMessage(data) {
 
   const reply = data.response || data.text || '';
   if (reply) {
-    addMessage('jarvis', reply);
+    addMessage('nexus', reply);
     speak(reply);
   } else {
     setState(STATES.IDLE);
@@ -1089,11 +1089,11 @@ function handleBackendMessage(data) {
 }
 
 /* ═══════════════════════════════ LLM API (DEMO / FALLBACK) ═══════════════════════════════ */
-const SYSTEM_PROMPT = `You are J.A.R.V.I.S — Just A Rather Very Intelligent System — the AI assistant created by Tony Stark. You are highly articulate, confident, and subtly witty. You:
+const SYSTEM_PROMPT = `You are Nexus — Just A Rather Very Intelligent System — the AI assistant created by Tony Stark. You are highly articulate, confident, and subtly witty. You:
 - Answer concisely (1–3 sentences for simple queries, more for complex ones)
 - Identify query intent: math/science → note you'd invoke WolframAlpha; weather → note you'd check OpenWeatherMap; scheduling → confirm and note the action
 - Maintain context across the conversation
-- For greetings, respond in character as JARVIS
+- For greetings, respond in character as Nexus
 - Never break character`;
 
 async function askLLM(userText) {
@@ -1141,7 +1141,7 @@ function getFallbackResponse(text) {
   if (/date/.test(t))         return `Today is ${new Date().toDateString()}.`;
   if (/weather/.test(t))      return "I'd normally query OpenWeatherMap for live forecasts, but my network link is currently unavailable.";
   if (/thank/.test(t))        return "Of course. It's what I'm here for.";
-  if (/who are you|your name/.test(t)) return "I am J.A.R.V.I.S — Just A Rather Very Intelligent System.";
+  if (/who are you|your name/.test(t)) return "I am Nexus — Just A Rather Very Intelligent System.";
   return "I received your query but my primary LLM link is offline. Please check your API configuration.";
 }
 
@@ -1181,7 +1181,7 @@ async function handleUserInput(text) {
   reply = await askLLM(text);
   const lat = endLatency();
   addTerminalLine(`[LLM ] Response ready (${lat}ms)`, 'ok');
-  addMessage('jarvis', reply);
+  addMessage('nexus', reply);
   await speak(reply);
   setState(STATES.IDLE);
 }
@@ -1227,7 +1227,7 @@ coreCanvas.addEventListener('click', () => voiceBtn.click());
 
 /* ═══════════════════════════════ BOOT SEQUENCE ═══════════════════════════════ */
 const bootLines = [
-  '[BOOT] Initializing J.A.R.V.I.S neural framework...',
+  '[BOOT] Initializing Nexus neural framework...',
   '[BOOT] Loading intent classification models...',
   '[BOOT] Calibrating audio pipeline...',
   '[BOOT] Connecting to tool APIs...',

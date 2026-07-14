@@ -1,5 +1,5 @@
 """
-J.A.R.V.I.S — Health Check Endpoints
+Nexus — Health Check Endpoints
 ====================================
 HTTP endpoints for monitoring system health and readiness.
 """

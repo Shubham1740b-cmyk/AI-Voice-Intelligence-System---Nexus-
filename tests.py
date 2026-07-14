@@ -1,5 +1,5 @@
 """
-J.A.R.V.I.S — tests.py
+Nexus — tests.py
 =======================
 Unit tests for all backend modules.
 
@@ -50,7 +50,7 @@ class TestFallbackTool(unittest.TestCase):
 
     def test_identity(self):
         result = self.tool.run_sync("Who are you?")
-        self.assertIn("J.A.R.V.I.S", result["response"])
+        self.assertIn("Nexus", result["response"])
 
     def test_unknown(self):
         result = self.tool.run_sync("xyzzy quux undefined gibberish 12345")
@@ -229,7 +229,7 @@ class TestLLMTool(unittest.TestCase):
 
     def test_api_mock_success(self):
         mock_response = {
-            "choices": [{"message": {"content": "I am JARVIS, at your service."}}]
+            "choices": [{"message": {"content": "I am Nexus, at your service."}}]
         }
 
         async def _go():
@@ -254,7 +254,7 @@ class TestLLMTool(unittest.TestCase):
                 _intents.OPENROUTER_API_KEY = "sk-or-test-key"
 
                 result = await LLMTool().run("Hello", [])
-                self.assertIn("JARVIS", result["response"])
+                self.assertIn("Nexus", result["response"])
 
         run_async(_go())
 
@@ -268,7 +268,7 @@ class TestLogger(unittest.TestCase):
 
     def test_logger_name(self):
         logger = get_logger("mymodule")
-        self.assertEqual(logger.name, "jarvis.mymodule")
+        self.assertEqual(logger.name, "nexus.mymodule")
 
     def test_json_log_file_created(self):
         from logger import LOG_FILE
@@ -292,6 +292,6 @@ class TestLogger(unittest.TestCase):
 # ═══════════════════════════════ ENTRY POINT ═════════════════════════════════
 if __name__ == "__main__":
     print("\n" + "═" * 60)
-    print("  J.A.R.V.I.S Unit Test Suite")
+    print("  Nexus Unit Test Suite")
     print("═" * 60 + "\n")
     unittest.main(verbosity=2)

@@ -1,5 +1,5 @@
 /**
- * J.A.R.V.I.S — Unified Intelligence Core
+ * Nexus — Unified Intelligence Core
  * Frontend Application — app.js
  *
  * Handles:
@@ -114,12 +114,12 @@ const conversationHistory = []; // multi-turn context for demo mode
 
 function addMessage(role, text) {
   const msg = document.createElement('div');
-  msg.className = 'chat-msg ' + (role === 'jarvis' ? 'jarvis' : 'user');
+  msg.className = 'chat-msg ' + (role === 'nexus' ? 'nexus' : 'user');
   const timeStr = new Date().toTimeString().slice(0,8);
   msg.innerHTML = `
-    <div class="msg-avatar">${role === 'jarvis' ? 'J' : 'U'}</div>
+    <div class="msg-avatar">${role === 'nexus' ? 'J' : 'U'}</div>
     <div class="msg-content">
-      <span class="msg-sender">${role === 'jarvis' ? 'JARVIS' : 'YOU'}</span>
+      <span class="msg-sender">${role === 'nexus' ? 'Nexus' : 'YOU'}</span>
       <p>${escapeHtml(text)}</p>
       <span class="msg-time">${timeStr}</span>
     </div>`;
@@ -478,7 +478,7 @@ function handleBackendMessage(data) {
 
   const reply = data.response || data.text || '';
   if (reply) {
-    addMessage('jarvis', reply);
+    addMessage('nexus', reply);
     speak(reply);
   } else {
     setState(STATES.IDLE);
@@ -486,11 +486,11 @@ function handleBackendMessage(data) {
 }
 
 /* ═══════════════════════════════ LLM API (DEMO / FALLBACK) ═══════════════════════════════ */
-const SYSTEM_PROMPT = `You are J.A.R.V.I.S — Just A Rather Very Intelligent System — the AI assistant created by Tony Stark. You are highly articulate, confident, and subtly witty. You:
+const SYSTEM_PROMPT = `You are Nexus — Just A Rather Very Intelligent System — the AI assistant created by Tony Stark. You are highly articulate, confident, and subtly witty. You:
 - Answer concisely (1–3 sentences for simple queries, more for complex ones)
 - Identify query intent: math/science → note you'd invoke WolframAlpha; weather → note you'd check OpenWeatherMap; scheduling → confirm and note the action
 - Maintain context across the conversation
-- For greetings, respond in character as JARVIS
+- For greetings, respond in character as Nexus
 - Never break character`;
 
 async function askLLM(userText) {
@@ -538,7 +538,7 @@ function getFallbackResponse(text) {
   if (/date/.test(t))         return `Today is ${new Date().toDateString()}.`;
   if (/weather/.test(t))      return "I'd normally query OpenWeatherMap for live forecasts, but my network link is currently unavailable.";
   if (/thank/.test(t))        return "Of course. It's what I'm here for.";
-  if (/who are you|your name/.test(t)) return "I am J.A.R.V.I.S — Just A Rather Very Intelligent System.";
+  if (/who are you|your name/.test(t)) return "I am Nexus — Just A Rather Very Intelligent System.";
   return "I received your query but my primary LLM link is offline. Please check your API configuration.";
 }
 
@@ -578,7 +578,7 @@ async function handleUserInput(text) {
   reply = await askLLM(text);
   const lat = endLatency();
   addTerminalLine(`[LLM ] Response ready (${lat}ms)`, 'ok');
-  addMessage('jarvis', reply);
+  addMessage('nexus', reply);
   await speak(reply);
   setState(STATES.IDLE);
 }
@@ -624,7 +624,7 @@ coreCanvas.addEventListener('click', () => voiceBtn.click());
 
 /* ═══════════════════════════════ BOOT SEQUENCE ═══════════════════════════════ */
 const bootLines = [
-  '[BOOT] Initializing J.A.R.V.I.S neural framework...',
+  '[BOOT] Initializing Nexus neural framework...',
   '[BOOT] Loading intent classification models...',
   '[BOOT] Calibrating audio pipeline...',
   '[BOOT] Connecting to tool APIs...',

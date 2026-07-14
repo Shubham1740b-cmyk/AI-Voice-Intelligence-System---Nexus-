@@ -1,4 +1,4 @@
-# J.A.R.V.I.S — Dockerfile
+# Nexus — Dockerfile
 # Production-ready container for local WebSocket + audio mode
 
 FROM python:3.11-slim AS base

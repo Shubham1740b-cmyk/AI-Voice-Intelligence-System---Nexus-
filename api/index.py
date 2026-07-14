@@ -1,5 +1,5 @@
 """
-J.A.R.V.I.S — Vercel Serverless API
+Nexus — Vercel Serverless API
 ====================================
 FastAPI backend that runs automatically on Vercel when the app is deployed.
 No separate server process needed — the API starts with every request.
@@ -32,8 +32,8 @@ except ImportError:
 log = get_logger("api_index")
 
 app = FastAPI(
-    title="J.A.R.V.I.S API",
-    description="Serverless backend for J.A.R.V.I.S — auto-runs on Vercel",
+    title="Nexus API",
+    description="Serverless backend for Nexus — auto-runs on Vercel",
     version="1.0.0",
 )
 
@@ -79,7 +79,7 @@ async def chat_endpoint(request: QueryRequest):
 async def health_check():
     return {
         "status": "ok",
-        "message": "J.A.R.V.I.S API is online.",
+        "message": "Nexus API is online.",
         "mode": "serverless",
     }
 

@@ -1,5 +1,5 @@
 """
-J.A.R.V.I.S — Resilience Patterns
+Nexus — Resilience Patterns
 =================================
 Circuit breaker, retry with exponential backoff, and bulkhead patterns
 for protecting external service calls.

@@ -1,5 +1,5 @@
 """
-J.A.R.V.I.S — intents.py
+Nexus — intents.py
 =========================
 Intelligent intent classification and tool-routing pipeline.
 
@@ -93,7 +93,7 @@ class LLMTool(BaseTool):
     name = "llm"
 
     SYSTEM_PROMPT = (
-        "You are J.A.R.V.I.S — Just A Rather Very Intelligent System, "
+        "You are Nexus — Just A Rather Very Intelligent System, "
         "the AI assistant created by Tony Stark. You are articulate, confident, "
         "subtly witty, and extremely helpful. Keep responses concise (1–4 sentences) "
         "unless asked for detail. Never break character."
@@ -130,8 +130,8 @@ class LLMTool(BaseTool):
         headers = {
             "Authorization": f"Bearer {OPENROUTER_API_KEY}",
             "Content-Type": "application/json",
-            "HTTP-Referer": "https://github.com/Sahhhiiillllll/JARVIS---AI-Intelligence-System-LLM",
-            "X-Title": "J.A.R.V.I.S",
+            "HTTP-Referer": "https://github.com/Sahhhiiillllll/Nexus---AI-Intelligence-System-LLM",
+            "X-Title": "Nexus",
         }
         url = "https://openrouter.ai/api/v1/chat/completions"
 
@@ -326,7 +326,7 @@ class WebSearchTool(BaseTool):
         try:
             data = await self._call_search_api(
                 {"q": query, "format": "json", "no_html": 1, "skip_disambig": 1},
-                {"User-Agent": "JARVIS/4.1"}
+                {"User-Agent": "Nexus/4.1"}
             )
 
             abstract = data.get("AbstractText", "").strip()
@@ -593,7 +593,7 @@ class FallbackTool(BaseTool):
         r'\b(joke|funny|humor)\b':
             "I'm afraid my humor subroutines are in maintenance mode. Ask me something more practical.",
         r'\b(who (are|is) you|your name)\b':
-            "I am J.A.R.V.I.S — Just A Rather Very Intelligent System.",
+            "I am Nexus — Just A Rather Very Intelligent System.",
         r'\b(how are you|status)\b':
             "All primary subsystems are functioning within normal parameters.",
         r'\b(shutdown|exit|quit|goodbye|bye)\b':
